@@ -1,0 +1,785 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="./" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>1. Módulo 1 - Confirmar que FortiSOC está sano y recibiendo datos &#8212; Nombre del proyecto no establecido 0.1 documentación</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=8f2a1f02" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="_static/css/lightbox.min.css?v=6e7d0de0" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="_static/documentation_options.js?v=e1a75a79"></script>
+    <script src="_static/doctools.js?v=9bcbadda"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="_static/copybutton.js?v=f281be69"></script>
+    <script>let toggleHintShow = 'Haz clic para mostrar';</script>
+    <script>let toggleHintHide = 'Haz clic para ocultar';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js?v=4a39c7ea"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js?v=f930bc37"></script>
+    <script src="_static/js/lightbox-plus-jquery.min.js?v=f0ca4bb6"></script>
+    <script src="_static/js/lightbox2-options.js?v=b4db3a7c"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = '001_validate';</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Buscar" href="search.html" />
+    <link rel="next" title="2. Módulo 2 - Identificar qué alertas merecen investigación" href="002_triage.html" />
+    <link rel="prev" title="Introducción" href="000_intro.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+    <meta name="docbuild:last-update" content="Jul 10, 2026"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Saltar al contenido principal</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Volver arriba</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Buscar..."
+         aria-label="Buscar..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="_static/light-fortinet-logo.png" class="logo__image only-light" alt=""/>
+    <script>document.write(`<img src="_static/dark-fortinet-logo.png" class="logo__image only-dark" alt=""/>`);</script>
+  
+  
+    <p class="title logo__title">Laboratorio guiado FortiSOC</p>
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Buscar" aria-label="Buscar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Buscar</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Contenidos:</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="000_intro.html">Introducción</a></li>
+</ul>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">1. Módulo 1 - Confirmar que FortiSOC está sano y recibiendo datos</a></li>
+<li class="toctree-l1"><a class="reference internal" href="002_triage.html">2. Módulo 2 - Identificar qué alertas merecen investigación</a></li>
+<li class="toctree-l1"><a class="reference internal" href="003_investigation.html">3. Módulo 3 - Determinar el alcance y la intención de la alerta de exploit IPS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="004_response.html">4. Módulo 4 - Contener la amenaza bloqueando la IP de origen</a></li>
+<li class="toctree-l1"><a class="reference internal" href="005_case.html">5. Módulo 5: Investigación de casos</a></li>
+<li class="toctree-l1"><a class="reference internal" href="006_to_define.html">6. Module 6 : Por definir</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Alternar barra lateral principal" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Descargar esta página">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/001_validate.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Descargar archivo fuente"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Imprimir a PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Pantalla completa"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="claro/oscuro" aria-label="claro/oscuro" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Buscar" aria-label="Buscar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Alternar barra lateral secundaria" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Módulo 1 - Confirmar que FortiSOC está sano y recibiendo datos</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> En esta página </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#goal-module-1">1.1. Objetivo - Módulo 1</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#siem">1.2. SIEM</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#analyzer">1.3. Analyzer</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#soar">1.4. SOAR</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#threat-intel-management">1.5. Gestión de inteligencia de amenazas</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#identifying-alerts">1.6. Identificación de alertas</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#task-1-data-leakage-alert">1.6.1. Tarea 1 — Alerta de fuga de datos</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#task-2-unauthorized-access-alert">1.6.2. Tarea 2 — Alerta de acceso no autorizado</a></li>
+</ul>
+</li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="module-1-confirm-fortisoc-is-healthy-and-receiving-data">
+<h1><span class="section-number">1. </span>Módulo 1 - Confirmar que FortiSOC está sano y recibiendo datos<a class="headerlink" href="#module-1-confirm-fortisoc-is-healthy-and-receiving-data" title="Enlace a este encabezado">#</a></h1>
+<section id="goal-module-1">
+<h2><span class="section-number">1.1. </span>Objetivo - Módulo 1<a class="headerlink" href="#goal-module-1" title="Enlace a este encabezado">#</a></h2>
+<div class="sd-card sd-sphinx-override sd-mb-3 sd-shadow-sm docutils">
+<div class="sd-card-body docutils">
+<div class="sd-card-title sd-font-weight-bold docutils">
+Objetivo: Confirmar que FortiSOC está sano y recibiendo datos</div>
+<p class="sd-card-text"><span class="sd-sphinx-override sd-badge sd-bg-success sd-bg-text-success">Duración: 10–15 min</span></p>
+<p class="sd-card-text"><strong>Tareas:</strong></p>
+<ul class="simple">
+<li><p class="sd-card-text">Confirmar que el SIEM está ingiriendo logs de una fuente de datos activa</p></li>
+<li><p class="sd-card-text">Confirmar que Analyzer está recibiendo logs de dispositivos</p></li>
+<li><p class="sd-card-text">Validar que el conector de SOAR está sano</p></li>
+<li><p class="sd-card-text">Comprender qué ofrece la gestión de inteligencia de amenazas (TIM)</p></li>
+<li><p class="sd-card-text">Localizar al menos una alerta</p></li>
+</ul>
+</div>
+</div>
+</section>
+<section id="siem">
+<h2><span class="section-number">1.2. </span>SIEM<a class="headerlink" href="#siem" title="Enlace a este encabezado">#</a></h2>
+<p>Hay 3 formas de validar que los eventos fluyen al módulo SIEM: trabájalas una por una.</p>
+<div class="admonition note">
+<p class="admonition-title">Nota</p>
+<p>También se genera una alerta cuando no se reciben logs de un dispositivo en un intervalo de tiempo personalizable, pero no se cubrirá en esta sección.</p>
+</div>
+<ol class="arabic">
+<li><p><strong>Collector</strong> – Navega a <strong>SIEM / Settings / Health</strong></p>
+<div class="sd-card sd-sphinx-override sd-mb-3 sd-shadow-sm docutils">
+<div class="sd-card-header docutils">
+<p class="sd-card-text"><span class="sd-sphinx-override sd-badge sd-bg-danger sd-bg-text-danger">?</span> <strong>¿Cuál es la salud del Collector y la hora del último archivo recibido?</strong></p>
+</div>
+<div class="sd-card-body docutils">
+<p class="sd-card-text">La marca de tiempo del último archivo recibido debería ser muy reciente: esto indica que los logs se están subiendo activamente a FortiSOC.</p>
+</div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Nota</p>
+<p>No te preocupes si el Event Status del colector del SIEM no es Normal. Es un entorno de laboratorio, no de producción.</p>
+</div>
+</li>
+<li><p><strong>CMDB</strong> – Navega a <strong>SIEM / CMDB / select the Collector</strong></p>
+<div class="sd-card sd-sphinx-override sd-mb-3 sd-shadow-sm docutils">
+<div class="sd-card-body docutils">
+<p class="sd-card-text"><span class="sd-sphinx-override sd-badge sd-bg-danger sd-bg-text-danger">?</span> <strong>Revisa los dispositivos y comprueba si el Event Status es Normal.</strong></p>
+</div>
+</div>
+<div class="sd-card sd-sphinx-override sd-mb-3 sd-shadow-sm docutils">
+<div class="sd-card-body docutils">
+<a href="_images/001_001.png" data-lightbox="image-set">
+<img alt="_images/001_001.png" src="_images/001_001.png" />
+</a>
+<p class="sd-card-text">SIEM CMDB – vista del collector</p>
+</div>
+</div>
+</li>
+<li><p><strong>Analytics</strong> – Navega a <strong>Cases &amp; Alerts / Search / Load a report</strong> for
+the Top Reporting Devices</p>
+<div class="sd-card sd-sphinx-override sd-mb-3 sd-shadow-sm docutils">
+<div class="sd-card-header docutils">
+<p class="sd-card-text"><span class="sd-sphinx-override sd-badge sd-bg-danger sd-bg-text-danger">?</span> <strong>¿Los dispositivos top de reporte coinciden con lo que viste en el CMDB?</strong></p>
+</div>
+<div class="sd-card-body docutils">
+<p class="sd-card-text">Deberías ver nombres de dispositivos coherentes y volúmenes de logs relativos.</p>
+</div>
+</div>
+<div class="sd-card sd-sphinx-override sd-mb-3 sd-shadow-sm docutils">
+<div class="sd-card-body docutils">
+<a href="_images/001_002.png" data-lightbox="image-set">
+<img alt="_images/001_002.png" src="_images/001_002.png" />
+</a>
+<p class="sd-card-text">Analytics – informe de dispositivos top de reporte</p>
+</div>
+</div>
+<div class="sd-card sd-sphinx-override sd-mb-3 sd-shadow-sm docutils">
+<div class="sd-card-body docutils">
+<a href="_images/001_003.png" data-lightbox="image-set">
+<img alt="_images/001_003.png" src="_images/001_003.png" />
+</a>
+<p class="sd-card-text">Analytics – volúmenes de logs por dispositivo</p>
+</div>
+</div>
+</li>
+</ol>
+</section>
+<section id="analyzer">
+<h2><span class="section-number">1.3. </span>Analyzer<a class="headerlink" href="#analyzer" title="Enlace a este encabezado">#</a></h2>
+<p>Analyzer almacena y analiza logs específicamente de dispositivos Fortinet Fabric. Valida que esté conectado y recibiendo datos.</p>
+<ol class="arabic">
+<li><p><strong>Device Status</strong> – Navega a <strong>Analyzer / Device Manager</strong></p>
+<div class="sd-card sd-sphinx-override sd-mb-3 sd-shadow-sm docutils">
+<div class="sd-card-body docutils">
+<p class="sd-card-text"><span class="sd-sphinx-override sd-badge sd-bg-danger sd-bg-text-danger">?</span> <strong>¿Cuál es el estado del dispositivo y la última vez que se recibieron logs?</strong></p>
+</div>
+</div>
+<div class="sd-card sd-sphinx-override sd-mb-3 sd-shadow-sm docutils">
+<div class="sd-card-body docutils">
+<a href="_images/001_004.png" data-lightbox="image-set">
+<img alt="_images/001_004.png" src="_images/001_004.png" />
+</a>
+<p class="sd-card-text">Analyzer – Device Manager</p>
+</div>
+</div>
+</li>
+<li><p><strong>View Fabric Logs</strong> – Navega a <strong>Analyzer / Log View</strong></p>
+<div class="sd-card sd-sphinx-override sd-mb-3 sd-shadow-sm docutils">
+<div class="sd-card-body docutils">
+<a href="_images/001_005.png" data-lightbox="image-set">
+<img alt="_images/001_005.png" src="_images/001_005.png" />
+</a>
+<p class="sd-card-text">Analyzer – Log View</p>
+</div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Nota</p>
+<p>En un despliegue de cliente, usarías esta vista para confirmar que FortiGate u otros dispositivos Fabric se han dado de alta correctamente.</p>
+</div>
+</li>
+</ol>
+</section>
+<section id="soar">
+<h2><span class="section-number">1.4. </span>SOAR<a class="headerlink" href="#soar" title="Enlace a este encabezado">#</a></h2>
+<p>Los playbooks en SOAR automatizan acciones de respuesta. Para que un playbook funcione, los conectores de los que depende deben estar sanos. El objetivo aquí es validar que los conectores están configurados.</p>
+<ol class="arabic">
+<li><p>Navega a <strong>Automation / Connectors</strong>. Busca el FortiGuard IOC Connector y verifica que muestre un estado sano.</p>
+<div class="sd-card sd-sphinx-override sd-mb-3 sd-shadow-sm docutils">
+<div class="sd-card-body docutils">
+<a href="_images/001_006.png" data-lightbox="image-set">
+<img alt="_images/001_006.png" src="_images/001_006.png" />
+</a>
+<p class="sd-card-text">SOAR – vista de salud de conectores</p>
+</div>
+</div>
+<p>El componente SOAR también ingiere alertas de los componentes SIEM y Analyzer.</p>
+</li>
+<li><p>Navega a <strong>Automation / Data Ingestion</strong>.</p></li>
+<li><p>Selecciona el FortiSIEM Connector y revisa los ajustes expandidos.</p>
+<div class="admonition danger">
+<p class="admonition-title">Peligro</p>
+<p>No hagas ningún cambio.</p>
+</div>
+<div class="sd-card sd-sphinx-override sd-mb-3 sd-shadow-sm docutils">
+<div class="sd-card-body docutils">
+<a href="_images/001_007.png" data-lightbox="image-set">
+<img alt="_images/001_007.png" src="_images/001_007.png" />
+</a>
+<p class="sd-card-text">SOAR – ajustes de ingesta del FortiSIEM Connector</p>
+</div>
+</div>
+<div class="sd-card sd-sphinx-override sd-mb-3 sd-shadow-sm docutils">
+<div class="sd-card-header docutils">
+<p class="sd-card-text"><span class="sd-sphinx-override sd-badge sd-bg-danger sd-bg-text-danger">?</span> <strong>¿Con qué frecuencia consulta el SIEM el SOAR en busca de nuevas alertas?</strong></p>
+</div>
+<div class="sd-card-body docutils">
+<p class="sd-card-text">Este valor controla con qué rapidez ve un analista una alerta nueva en el SOAR después de generarse en el SIEM.</p>
+</div>
+</div>
+</li>
+</ol>
+</section>
+<section id="threat-intel-management">
+<h2><span class="section-number">1.5. </span>Gestión de inteligencia de amenazas<a class="headerlink" href="#threat-intel-management" title="Enlace a este encabezado">#</a></h2>
+<p>TIM enriquece las alertas comprobando automáticamente si las IP, dominios y hashes de una alerta son amenazas conocidas. Sin TIM, un analista debe investigar manualmente cada indicador. En este módulo se puede usar el FortiGuard IOC Connector, así como otros conectores de inteligencia de amenazas.</p>
+<ol class="arabic">
+<li><p>Haz clic en el menú izquierdo de Gestión de inteligencia de amenazas y revisa las opciones disponibles.</p>
+<div class="sd-card sd-sphinx-override sd-mb-3 sd-shadow-sm docutils">
+<div class="sd-card-body docutils">
+<a href="_images/001_008.png" data-lightbox="image-set">
+<img alt="_images/001_008.png" src="_images/001_008.png" />
+</a>
+<p class="sd-card-text">Gestión de inteligencia de amenazas overview</p>
+</div>
+</div>
+</li>
+</ol>
+<div class="pst-scrollable-table-container"><table class="table">
+<tbody>
+<tr class="row-odd"><td><p>Sección</p></td>
+<td><p>Descripción</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Indicators</strong></p></td>
+<td><p>Extraídos de las alertas. Haz clic en un indicador para ver más detalles y, a continuación, consulta el<br />
+playbook que los extrajo mediante el icono de playbook (arriba a la derecha).
+Consulta las alertas y casos asociados al indicador.</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Dashboards</strong></p></td>
+<td><p>Pantalla de estado con estadísticas actuales de los indicadores.</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Búsqueda de inteligencia de amenazas</strong></p></td>
+<td><p>Busca indicadores. Introduce la dirección IP:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>208.91.114.100
+</pre></div>
+</div>
+<div class="sd-card sd-sphinx-override sd-mb-3 sd-shadow-sm docutils">
+<div class="sd-card-body docutils">
+<p class="sd-card-text"><span class="sd-sphinx-override sd-badge sd-bg-danger sd-bg-text-danger">?</span> <strong>What risk level is assigned to this indicator?</strong></p>
+</div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Nota</p>
+<p>Esta es la misma IP que encontrarás en los laboratorios posteriores: tenla en cuenta.</p>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p><strong>Feed de inteligencia de amenazas</strong></p></td>
+<td><p>Lista completa de todos los indicadores.</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Intelligence</strong></p></td>
+<td><p>View the latest FortiGuard threat intel by industry or actor. The <strong>Feed
+Configuration</strong> tab (far right) is where additional threat feeds can be integrated.</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>MITRE ATT&amp;CK</strong></p></td>
+<td><p>Details on groups, tactics, and techniques. This information can be
+referenced by playbooks to enrich Alerts.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="identifying-alerts">
+<h2><span class="section-number">1.6. </span>Identificación de alertas<a class="headerlink" href="#identifying-alerts" title="Enlace a este encabezado">#</a></h2>
+<p>Las alertas en FortiSOC están en la sección Cases & Alerts. Tu tarea es explorar las alertas y encontrar una alerta concreta de interés.</p>
+<p>Navega a <strong>Cases &amp; Alerts / Alerts / Alert List</strong>.</p>
+<section id="task-1-data-leakage-alert">
+<h3><span class="section-number">1.6.1. </span>Tarea 1 — Alerta de fuga de datos<a class="headerlink" href="#task-1-data-leakage-alert" title="Enlace a este encabezado">#</a></h3>
+<p>Localiza una alerta con estos filtros:</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<tbody>
+<tr class="row-odd"><td><p><strong>Type</strong></p></td>
+<td><p><span class="sd-sphinx-override sd-badge sd-outline-primary sd-text-primary">Fuga de datos</span></p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Source</strong></p></td>
+<td><div class="highlight-text notranslate"><div class="highlight"><pre><span></span>Fortinet FortiSIEM
+</pre></div>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>Un buen ejemplo que buscar es:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>Office365<span class="w"> </span>mailbox<span class="w"> </span>login<span class="w"> </span>by<span class="w"> </span>partha.kaushik@example.com<span class="w"> </span>from<span class="w"> </span>Canada<span class="w"> </span>using<span class="w"> </span><span class="m">208</span>.91.114.100
+</pre></div>
+</div>
+<div class="sd-card sd-sphinx-override sd-mb-3 sd-shadow-sm docutils">
+<div class="sd-card-body docutils">
+<a href="_images/001_009.png" data-lightbox="image-set">
+<img alt="_images/001_009.png" src="_images/001_009.png" />
+</a>
+<p class="sd-card-text">Fuga de datos Alert example</p>
+</div>
+</div>
+<div class="sd-card sd-sphinx-override sd-mb-3 sd-shadow-sm docutils">
+<div class="sd-card-header docutils">
+<p class="sd-card-text"><span class="sd-sphinx-override sd-badge sd-bg-danger sd-bg-text-danger">?</span> <strong>Desde la alerta, responde a las siguientes preguntas:</strong></p>
+</div>
+<div class="sd-card-body docutils">
+<ol class="arabic simple">
+<li><p class="sd-card-text">¿Dónde puedes ver el evento/log que hizo que se desencadenara la alerta? ¿En qué sección de la GUI está?</p></li>
+<li><p class="sd-card-text">¿Dónde puedes ver los indicadores extraídos?</p></li>
+<li><p class="sd-card-text">Si no ves ningún indicador, puede deberse al tipo de alerta. Prueba a encontrar una alerta con una dirección IP en el nombre: es más probable que tenga el indicador extraído.</p></li>
+<li><p class="sd-card-text">Revisa qué playbooks se ejecutaron para la alerta. Haz clic en la pestaña Playbooks de la alerta. ¿Qué playbooks se ejecutan automáticamente? Si no ves playbooks, consulta los logs históricos de playbooks.</p></li>
+</ol>
+</div>
+</div>
+</section>
+<section id="task-2-unauthorized-access-alert">
+<h3><span class="section-number">1.6.2. </span>Tarea 2 — Alerta de acceso no autorizado<a class="headerlink" href="#task-2-unauthorized-access-alert" title="Enlace a este encabezado">#</a></h3>
+<p>Localiza una alerta con estos filtros:</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<tbody>
+<tr class="row-odd"><td><p><strong>Type</strong></p></td>
+<td><div class="highlight-text notranslate"><div class="highlight"><pre><span></span>Acceso no autorizado
+</pre></div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><p><strong>Source</strong></p></td>
+<td><div class="highlight-text notranslate"><div class="highlight"><pre><span></span>Fortinet FortiAnalyzer
+</pre></div>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>Busca la alerta sospechosa de autenticación multigeográfica del usuario:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>demo
+</pre></div>
+</div>
+<p>Selecciona una de las alertas que te parezcan interesantes, por ejemplo:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>Suspicious successful authentication from multiple geo locations for user: demo
+</pre></div>
+</div>
+<div class="sd-card sd-sphinx-override sd-mb-3 sd-shadow-sm docutils">
+<div class="sd-card-header docutils">
+<p class="sd-card-text"><span class="sd-sphinx-override sd-badge sd-bg-danger sd-bg-text-danger">?</span> <strong>Y responde a las siguientes preguntas:</strong></p>
+</div>
+<div class="sd-card-body docutils">
+<ol class="arabic simple">
+<li><p class="sd-card-text">¿Cuáles son las IP de origen y destino en la alerta?</p></li>
+<li><p class="sd-card-text">¿Hay indicadores maliciosos? Si es así, ¿de dónde procede el indicador malicioso? (Nombra uno si hay varios.)</p></li>
+<li><p class="sd-card-text">¿Se han desencadenado alertas con el mismo indicador malicioso?</p></li>
+<li><p class="sd-card-text">¿Puedes explicar qué ocurrió en la alerta? ¿Qué usuario está afectado?</p></li>
+</ol>
+</div>
+</div>
+<div class="sd-card sd-sphinx-override sd-mb-3 sd-shadow-sm docutils">
+<div class="sd-card-body docutils">
+<div class="sd-card-title sd-font-weight-bold docutils">
+📌📋 RESUMEN</div>
+<p class="sd-card-text">En esta sección deberías haber entendido: el monitoreo del estado de eventos en SIEM o Analyzer, los conectores de SOAR y la búsqueda de alertas.</p>
+</div>
+</div>
+</section>
+</section>
+</section>
+
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="000_intro.html"
+       title="página anterior">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">anterior</p>
+        <p class="prev-next-title">Introducción</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="002_triage.html"
+       title="página siguiente">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">siguiente</p>
+        <p class="prev-next-title"><span class="section-number">2. </span>Módulo 2 - Identificar qué alertas merecen investigación</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> En esta página
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#goal-module-1">1.1. Objetivo - Módulo 1</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#siem">1.2. SIEM</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#analyzer">1.3. Analyzer</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#soar">1.4. SOAR</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#threat-intel-management">1.5. Gestión de inteligencia de amenazas</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#identifying-alerts">1.6. Identificación de alertas</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#task-1-data-leakage-alert">1.6.1. Tarea 1 — Alerta de fuga de datos</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#task-2-unauthorized-access-alert">1.6.2. Tarea 2 — Alerta de acceso no autorizado</a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+Por Chris Durkin, Dusan Tomic, Judit Fulop
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2026, Fortinet.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    <p class="last-updated">
+  Última actualización: 10 de julio de 2026.
+  <br/>
+</p>
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="es" data-content_root="./">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Introducción &#8212; Laboratorio XPERTS26 · PHP2Shell</title>
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <link href="old/_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link href="old/_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link href="old/_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link href="old/_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="stylesheet" type="text/css" href="old/_static/pygments.css" />
+  <link rel="stylesheet" type="text/css" href="old/_static/styles/sphinx-book-theme.css" />
+  <link rel="stylesheet" type="text/css" href="old/_static/copybutton.css" />
+  <link rel="stylesheet" type="text/css" href="old/_static/togglebutton.css" />
+  <link rel="stylesheet" type="text/css" href="old/_static/sphinx-design.min.css" />
+  <link rel="stylesheet" type="text/css" href="old/_static/css/lightbox.min.css" />
+  <script src="old/_static/vendor/fontawesome/6.5.2/js/all.min.js"></script>
+  <style>
+    .xp-img { max-width: 100%; height: auto; margin: 0.75rem 0; border: 1px solid rgba(128,128,128,0.25); border-radius: 4px; display: block; }
+    .xp-fig { margin: 1rem 0; }
+  </style>
+</head>
+<body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Saltar al contenido principal</a></div>
+  <div id="pst-scroll-pixel-helper"></div>
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top"><i class="fa-solid fa-arrow-up"></i>Volver arriba</button>
+  <input type="checkbox" class="sidebar-toggle" id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  <input type="checkbox" class="sidebar-toggle" id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none"></header>
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      <div class="bd-sidebar-primary bd-sidebar">
+        <div class="sidebar-header-items sidebar-primary__section"></div>
+        <div class="sidebar-primary-items__start sidebar-primary__section">
+          <div class="sidebar-primary-item">
+            <a class="navbar-brand logo" href="index.html">
+              <img src="old/_static/light-fortinet-logo.png" class="logo__image only-light" alt=""/>
+              <script>document.write(`<img src="old/_static/dark-fortinet-logo.png" class="logo__image only-dark" alt=""/>`);</script>
+              <p class="title logo__title">Laboratorio XPERTS26 · PHP2Shell</p>
+            </a>
+          </div>
+          <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Contenidos:</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 current active"><a class="reference internal" href="000_intro.html">Introducción</a></li>
+</ul>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 "><a class="reference internal" href="001_task1.html">1. Tarea 1 — Reconocimiento</a></li>
+<li class="toctree-l1 "><a class="reference internal" href="002_task2.html">2. Tarea 2 — Explotación</a></li>
+<li class="toctree-l1 "><a class="reference internal" href="003_task3.html">3. Tarea 3 — Instalación</a></li>
+<li class="toctree-l1 "><a class="reference internal" href="004_task4.html">4. Tarea 4 — Mando y control</a></li>
+<li class="toctree-l1 "><a class="reference internal" href="005_task5.html">5. Tarea 5 — Exfiltración</a></li>
+<li class="toctree-l1 "><a class="reference internal" href="006_task6.html">6. Tarea 6 — Auditoría de la IA</a></li>
+<li class="toctree-l1 "><a class="reference internal" href="007_task7.html">7. Tarea 7 — Movimiento lateral</a></li>
+<li class="toctree-l1 "><a class="reference internal" href="008_task8.html">8. Tarea 8 — Informe y expediente</a></li>
+</ul>
+    </div>
+</nav></div>
+        </div>
+      </div>
+      <main id="main-content" class="bd-main" role="main">
+        <div class="sbt-scroll-pixel-helper"></div>
+        <div class="bd-content">
+          <div class="bd-article-container">
+            <div class="bd-header-article d-print-none">
+              <div class="header-article-items header-article__inner">
+                <div class="header-article-items__start">
+                  <div class="header-article-item">
+                    <button class="sidebar-toggle primary-toggle btn btn-sm" title="Alternar barra lateral principal">
+                      <span class="fa-solid fa-bars"></span>
+                    </button>
+                  </div>
+                </div>
+                <div class="header-article-items__end">
+                  <div class="header-article-item">
+                    <script>
+                      document.write(`<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="claro/oscuro" aria-label="claro/oscuro"><i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i><i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i><i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i></button>`);
+                    </script>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <article class="bd-article">
+              <section id="intro">
+<h1>Introducción<a class="headerlink" href="#intro" title="Enlace a este encabezado">#</a></h1>
+
+<section id="context">
+<h2><span class="section-number">0.1. </span>Contexto del ataque<a class="headerlink" href="#context" title="Enlace a este encabezado">#</a></h2>
+<p><strong>PHP2Shell</strong> es una campaña real de explotación contra portales expuestos en PHP-FPM que simulamos aquí con telemetría sintética e IOC de reputación pública.</p>
+<p>El objetivo de esta versión es el <strong>portal de pagos</strong> del ámbito <code>xperts26</code>: <code>web01</code> (10.10.20.15, VIP 203.0.113.45) y su base <code>db01</code> (10.10.20.30, MySQL), protegidos por el FortiGate con una política de borde <code>wan1 → dmz</code>.</p>
+<p>El ataque se despliega en <strong>ocho fases</strong>, en unos 19 minutos:</p>
+<ul>
+<li>Reconocimiento desde <code>103.216.220.92</code> (barrido de puertos bloqueado con <em>deny</em> en el cortafuegos).</li>
+<li>Explotación del <strong>PHP-FPM 8.4.6</strong> sin parchear mediante una petición multipart sobredimensionada y un agotamiento de memoria (<code>PHP.longjmp.Remote.Code.Execution</code>, firma IPS <code>62657</code>, <code>CVE-2026-109618</code>).</li>
+<li>Instalación con creación de la cuenta <code>svc_web</code> y despliegue de webshell en <code>/var/www/html</code>.</li>
+<li>Mando y control con balizas periódicas hacia <code>31.223.184.166</code>.</li>
+<li>Exfiltración masiva a <code>95.217.98.37</code>.</li>
+<li>Movimiento lateral de <code>web01</code> a <code>db01</code> por SSH y MySQL.</li>
+</ul>
+<p>Las dos IPs de C2/exfiltración están enriquecidas con VirusTotal y responden <em>Malicious</em>; las técnicas ATT&amp;CK asociadas van de <strong>T1595</strong> (scanning) a <strong>T1048</strong> (exfiltración) y <strong>T1021/T1210</strong> (lateral).</p>
+<p><strong>Vuestra misión:</strong> reconstruir esa cadena desde la evidencia — alertas, source data crudo, IOCs con procedencia, ATT&amp;CK y cronología.</p>
+<div class="admonition note"><p class="admonition-title">Nota</p><p>Los eventos de este laboratorio son <strong>sintéticos</strong> y están construidos para el ejercicio. No corresponden a tráfico observado en ninguna red real del cliente.</p></div>
+</section>
+
+<section id="map">
+<h2><span class="section-number">0.2. </span>Mapa del laboratorio<a class="headerlink" href="#map" title="Enlace a este encabezado">#</a></h2>
+<p><strong>Ocho tareas.</strong> No siguen el orden en que aparecen en la lista, sino el orden en que ocurrió el ataque. Empieza por la primera y no saltes.</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead><tr><th>Tarea</th><th>Momento</th><th>Severidad</th><th>Pregunta que responde</th></tr></thead>
+<tbody>
+<tr><td>1</td><td>Reconocimiento · alertas</td><td>Low</td><td>¿Quién está mirando y qué busca?</td></tr>
+<tr><td>2</td><td>Explotación</td><td>Medium</td><td>¿Cómo entra?</td></tr>
+<tr><td>3</td><td>Instalación</td><td>High</td><td>¿Qué deja dentro?</td></tr>
+<tr><td>4</td><td>Mando y control</td><td>High</td><td>¿A dónde llama?</td></tr>
+<tr><td>5</td><td>Exfiltración</td><td>Medium</td><td>¿Qué se lleva y qué aprecio de la IA?</td></tr>
+<tr><td>6</td><td>Auditoría de la IA</td><td>—</td><td>¿Dónde y cómo se ejecuta la IA?</td></tr>
+<tr><td>7</td><td>Movimiento lateral</td><td>High</td><td>¿Hasta dónde llega y qué haces a mano?</td></tr>
+<tr><td>8</td><td>Informe y expediente</td><td>—</td><td>¿Qué decides y qué entregas?</td></tr>
+</tbody></table></div>
+</section>
+
+<section id="setup">
+<h2><span class="section-number">0.3. </span>Antes de empezar<a class="headerlink" href="#setup" title="Enlace a este encabezado">#</a></h2>
+<p><strong>Cómo está montado el laboratorio:</strong></p>
+<ul>
+<li>Tres activos clave: <code>web01</code> con un CVE pendiente de parchear, <code>db01</code> y el cortafuegos que los “protege”.</li>
+<li>Una nueva identidad: <code>svc_web</code>.</li>
+<li>12 alertas con sus eventos SIEM.</li>
+<li>Seis casos ya abiertos por la correlación automática (salvo alguno, que escalarás a mano).</li>
+<li>Dos dashboards dedicados al alcance.</li>
+<li>Tres playbooks que aplican al laboratorio.</li>
+</ul>
+<p><strong>Convenciones de esta guía:</strong></p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead><tr><th>Convención</th><th>Qué significa</th></tr></thead>
+<tbody>
+<tr><td>Registro de evidencias</td><td>La tabla donde anotas lo que encuentres. Si no puedes rellenarla, la tarea no está terminada.</td></tr>
+<tr><td>Preguntas de control</td><td>Comprueban que has entendido lo que has visto, no solo que has hecho clic. <em>Se responden en la web de la competición.</em></td></tr>
+<tr><td>Pista</td><td>Ayuda si te atascas. Intenta resolverlo antes sin ella.</td></tr>
+</tbody></table></div>
+<div class="admonition important"><p class="admonition-title">Regla de oro del laboratorio</p><p>Cada afirmación que escribas en el informe final tiene que apoyarse en un <strong>campo concreto</strong> que puedas señalar en pantalla. Si no puedes señalar en pantalla, no la escribas.</p></div>
+</section>
+
+<section id="ai-before">
+<h2><span class="section-number">0.4. </span>La IA ya ha trabajado antes de que llegues<a class="headerlink" href="#ai-before" title="Enlace a este encabezado">#</a></h2>
+<p>Antes de abrir un caso hay algo que necesitas entender: <strong>el análisis de impacto no lo pides tú</strong>. Ya está hecho cuando llegas, y se rehace si modificas el caso. Y si se requiere, también puedes refrescarlo con la acción <em>Generate AI enrichment</em> desde el propio caso.</p>
+<p><strong>Qué hace la plataforma sola:</strong></p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead><tr><th>Agentic Playbook</th><th>Estado</th><th>Cuándo se ejecuta</th></tr></thead>
+<tbody>
+<tr><td>FortiAI - Case Enrichment &amp; Impact Analysis (On Create)</td><td>Activo</td><td>Al crear un caso, sin intervención</td></tr>
+<tr><td>FortiAI - Case Enrichment &amp; Impact Analysis (On Update)</td><td>Activo</td><td>Al modificar un caso, sin intervención</td></tr>
+<tr><td>FortiAI - Case Enrichment &amp; Impact Analysis</td><td>Activo</td><td>Manual o llamado por otro</td></tr>
+<tr><td>FortiAI - Case Impact Assessments</td><td>Activo</td><td>Manual, sobre el caso seleccionado</td></tr>
+<tr><td>FortiAI - Incident Impact Assessments - Multiple Language Support</td><td>Activo</td><td>Manual, variante multiidioma</td></tr>
+<tr><td>FortiAI - Asset Threat Posture Timeline</td><td>Activo</td><td>Postura del activo a lo largo del tiempo</td></tr>
+</tbody></table></div>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead><tr><th>Playbook</th><th>Estado</th><th>Cuándo se ejecuta</th></tr></thead>
+<tbody>
+<tr><td>XPERTS26_VULN</td><td>Activo</td><td>Al crearse cualquier caso del ámbito xperts26: escribe la vulnerabilidad y su ficha al pie del caso</td></tr>
+</tbody></table></div>
+<p><strong>Por qué importa:</strong> el análisis no es un adorno: llega antes que tú, condiciona la primera impresión del caso y muchas veces es lo único que lee el que recibe el turno de noche. Tu responsabilidad es <strong>comprobar que lo que dice se sostiene en las evidencias</strong>.</p>
+</section>
+
+</section>
+            </article>
+            <footer class="prev-next-footer d-print-none"><div class="prev-next-area"><a class="left-prev" href="index.html" title="página anterior"><i class="fa-solid fa-angle-left"></i><div class="prev-next-info"><p class="prev-next-subtitle">anterior</p><p class="prev-next-title">Inicio</p></div></a><a class="right-next" href="001_task1.html" title="página siguiente"><div class="prev-next-info"><p class="prev-next-subtitle">siguiente</p><p class="prev-next-title">1. Tarea 1 — Reconocimiento</p></div><i class="fa-solid fa-angle-right"></i></a></div></footer>
+          </div>
+        </div>
+        <footer class="bd-footer-content">
+          <div class="bd-footer-content__inner container">
+            <div class="footer-item"><p class="component-author">Guía del analista XPERTS26 · PHP2Shell</p></div>
+            <div class="footer-item"><p class="copyright">© Copyright 2026, Fortinet.</p></div>
+            <div class="footer-item"><p class="last-updated">Última actualización: 10 de noviembre de 2026.</p></div>
+          </div>
+        </footer>
+      </main>
+    </div>
+  </div>
+  <script src="old/_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+  <script src="old/_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+</body>
+</html>

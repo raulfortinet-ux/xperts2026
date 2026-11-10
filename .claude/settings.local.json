@@ -1,0 +1,8 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(unzip -o XPERTS26_Guia_Analista.docx -d /tmp/xperts_extract)",
+      "Read(//tmp/xperts_extract/**)"
+    ]
+  }
+}

@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="es" data-content_root="./">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Tarea 4 — Mando y control &#8212; Laboratorio XPERTS26 · PHP2Shell</title>
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <link href="old/_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link href="old/_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link href="old/_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link href="old/_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="stylesheet" type="text/css" href="old/_static/pygments.css" />
+  <link rel="stylesheet" type="text/css" href="old/_static/styles/sphinx-book-theme.css" />
+  <link rel="stylesheet" type="text/css" href="old/_static/copybutton.css" />
+  <link rel="stylesheet" type="text/css" href="old/_static/togglebutton.css" />
+  <link rel="stylesheet" type="text/css" href="old/_static/sphinx-design.min.css" />
+  <link rel="stylesheet" type="text/css" href="old/_static/css/lightbox.min.css" />
+  <script src="old/_static/vendor/fontawesome/6.5.2/js/all.min.js"></script>
+  <style>
+    .xp-img { max-width: 100%; height: auto; margin: 0.75rem 0; border: 1px solid rgba(128,128,128,0.25); border-radius: 4px; display: block; }
+    .xp-fig { margin: 1rem 0; }
+  </style>
+</head>
+<body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Saltar al contenido principal</a></div>
+  <div id="pst-scroll-pixel-helper"></div>
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top"><i class="fa-solid fa-arrow-up"></i>Volver arriba</button>
+  <input type="checkbox" class="sidebar-toggle" id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  <input type="checkbox" class="sidebar-toggle" id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none"></header>
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      <div class="bd-sidebar-primary bd-sidebar">
+        <div class="sidebar-header-items sidebar-primary__section"></div>
+        <div class="sidebar-primary-items__start sidebar-primary__section">
+          <div class="sidebar-primary-item">
+            <a class="navbar-brand logo" href="index.html">
+              <img src="old/_static/light-fortinet-logo.png" class="logo__image only-light" alt=""/>
+              <script>document.write(`<img src="old/_static/dark-fortinet-logo.png" class="logo__image only-dark" alt=""/>`);</script>
+              <p class="title logo__title">Laboratorio XPERTS26 · PHP2Shell</p>
+            </a>
+          </div>
+          <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Contenidos:</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 "><a class="reference internal" href="000_intro.html">Introducción</a></li>
+</ul>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 "><a class="reference internal" href="001_task1.html">1. Tarea 1 — Reconocimiento</a></li>
+<li class="toctree-l1 "><a class="reference internal" href="002_task2.html">2. Tarea 2 — Explotación</a></li>
+<li class="toctree-l1 "><a class="reference internal" href="003_task3.html">3. Tarea 3 — Instalación</a></li>
+<li class="toctree-l1 current active"><a class="reference internal" href="004_task4.html">4. Tarea 4 — Mando y control</a></li>
+<li class="toctree-l1 "><a class="reference internal" href="005_task5.html">5. Tarea 5 — Exfiltración</a></li>
+<li class="toctree-l1 "><a class="reference internal" href="006_task6.html">6. Tarea 6 — Auditoría de la IA</a></li>
+<li class="toctree-l1 "><a class="reference internal" href="007_task7.html">7. Tarea 7 — Movimiento lateral</a></li>
+<li class="toctree-l1 "><a class="reference internal" href="008_task8.html">8. Tarea 8 — Informe y expediente</a></li>
+</ul>
+    </div>
+</nav></div>
+        </div>
+      </div>
+      <main id="main-content" class="bd-main" role="main">
+        <div class="sbt-scroll-pixel-helper"></div>
+        <div class="bd-content">
+          <div class="bd-article-container">
+            <div class="bd-header-article d-print-none">
+              <div class="header-article-items header-article__inner">
+                <div class="header-article-items__start">
+                  <div class="header-article-item">
+                    <button class="sidebar-toggle primary-toggle btn btn-sm" title="Alternar barra lateral principal">
+                      <span class="fa-solid fa-bars"></span>
+                    </button>
+                  </div>
+                </div>
+                <div class="header-article-items__end">
+                  <div class="header-article-item">
+                    <script>
+                      document.write(`<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="claro/oscuro" aria-label="claro/oscuro"><i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i><i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i><i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i></button>`);
+                    </script>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <article class="bd-article">
+              <section id="task-4">
+<h1><span class="section-number">4. </span>Tarea 4 — Mando y control: a dónde llama el servidor<a class="headerlink" href="#task-4" title="Enlace a este encabezado">#</a></h1>
+
+<section id="goal-task4">
+<h2><span class="section-number">4.1. </span>Objetivo<a class="headerlink" href="#goal-task4" title="Enlace a este encabezado">#</a></h2>
+<div class="sd-card sd-sphinx-override sd-mb-3 sd-shadow-sm docutils">
+  <div class="sd-card-body docutils">
+    <div class="sd-card-title sd-font-weight-bold docutils">Objetivo: Identificar el patrón de comunicación con la infraestructura de control y enriquecer el indicador para valorarlo.</div>
+    <p class="sd-card-text"><span class="sd-sphinx-override sd-badge sd-bg-success sd-bg-text-success">Duración: 10–15 min</span></p>
+    <p class="sd-card-text"><strong>Tareas:</strong></p>
+    <ul class="simple"><li><p class="sd-card-text">Identificar el patrón de comunicación con la infraestructura de control</p></li>
+<li><p class="sd-card-text">Enriquecer el indicador C2 y valorarlo</p></li>
+<li><p class="sd-card-text">Distinguir una baliza de una descarga normal</p></li></ul>
+  </div>
+</div>
+</section>
+<section id="steps-task4">
+<h2><span class="section-number">4.2. </span>Pasos<a class="headerlink" href="#steps-task4" title="Enlace a este encabezado">#</a></h2>
+<p>Abre el caso &quot;Detected malicious activities on web01.pagos.xperts26.com&quot;.</p>
+<p>Localiza el indicador C2 y anota a qué puerto se conecta el servidor. Se ve sencillo desde el timeline:</p>
+<figure class="xp-fig"><a href="_images/image38.png" data-lightbox="image-set"><img class="xp-img" src="_images/image38.png" alt="image38.png" loading="lazy"/></a></figure>
+<p>De nuevo podemos no complicarnos y ejecutar el análisis con AI:</p>
+<figure class="xp-fig"><a href="_images/image39.png" data-lightbox="image-set"><img class="xp-img" src="_images/image39.png" alt="image39.png" loading="lazy"/></a></figure>
+<p>Y conseguimos toda la info de un vistazo.</p>
+<figure class="xp-fig"><a href="_images/image40.png" data-lightbox="image-set"><img class="xp-img" src="_images/image40.png" alt="image40.png" loading="lazy"/></a></figure>
+<p>Analiza el IOC:</p>
+<figure class="xp-fig"><a href="_images/image41.png" data-lightbox="image-set"><img class="xp-img" src="_images/image41.png" alt="image41.png" loading="lazy"/></a></figure>
+<figure class="xp-fig"><a href="_images/image42.png" data-lightbox="image-set"><img class="xp-img" src="_images/image42.png" alt="image42.png" loading="lazy"/></a></figure>
+<p>Recuerda un matiz: una IP de campaña no siempre está catalogada en una fuente; que diga &quot;IOC Category: None&quot; no la vuelve inofensiva.</p>
+<figure class="xp-fig"><a href="_images/image43.png" data-lightbox="image-set"><img class="xp-img" src="_images/image43.png" alt="image43.png" loading="lazy"/></a></figure>
+<p>Puedes buscar si hay mas info sobre el ioc desde la pestaña de TIP:</p>
+<figure class="xp-fig"><a href="_images/image44.png" data-lightbox="image-set"><img class="xp-img" src="_images/image44.png" alt="image44.png" loading="lazy"/></a></figure>
+<figure class="xp-fig"><a href="_images/image45.png" data-lightbox="image-set"><img class="xp-img" src="_images/image45.png" alt="image45.png" loading="lazy"/></a></figure>
+<figure class="xp-fig"><a href="_images/image46.png" data-lightbox="image-set"><img class="xp-img" src="_images/image46.png" alt="image46.png" loading="lazy"/></a></figure>
+<p>Revisa el tamaño de los paquetes de esta “Baliza” de Command and control:</p>
+<p>Lo puedes ver desde el data-source de la alerta, o…</p>
+<figure class="xp-fig"><a href="_images/image47.png" data-lightbox="image-set"><img class="xp-img" src="_images/image47.png" alt="image47.png" loading="lazy"/></a></figure>
+<p>Más fácil aún, el asistente te echa una mano.</p>
+<figure class="xp-fig"><a href="_images/image48.png" data-lightbox="image-set"><img class="xp-img" src="_images/image48.png" alt="image48.png" loading="lazy"/></a></figure>
+</section>
+<div class="admonition important">
+  <p class="admonition-title">Preguntas de control</p>
+  <p>Las <strong>preguntas de control</strong> de esta tarea están publicadas en la <strong>web oficial de la competición XPERTS26</strong>. Entra con tu equipo para responderlas y validar el progreso del laboratorio.</p>
+  <p>👉 Accede a la <strong>plataforma de la competición</strong> para enviar tus respuestas.</p>
+</div>
+
+</section>
+            </article>
+            <footer class="prev-next-footer d-print-none"><div class="prev-next-area"><a class="left-prev" href="003_task3.html" title="página anterior"><i class="fa-solid fa-angle-left"></i><div class="prev-next-info"><p class="prev-next-subtitle">anterior</p><p class="prev-next-title">3. Tarea 3 — Instalación</p></div></a><a class="right-next" href="005_task5.html" title="página siguiente"><div class="prev-next-info"><p class="prev-next-subtitle">siguiente</p><p class="prev-next-title">5. Tarea 5 — Exfiltración</p></div><i class="fa-solid fa-angle-right"></i></a></div></footer>
+          </div>
+        </div>
+        <footer class="bd-footer-content">
+          <div class="bd-footer-content__inner container">
+            <div class="footer-item"><p class="component-author">Guía del analista XPERTS26 · PHP2Shell</p></div>
+            <div class="footer-item"><p class="copyright">© Copyright 2026, Fortinet.</p></div>
+            <div class="footer-item"><p class="last-updated">Última actualización: 10 de noviembre de 2026.</p></div>
+          </div>
+        </footer>
+      </main>
+    </div>
+  </div>
+  <script src="old/_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+  <script src="old/_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+</body>
+</html>

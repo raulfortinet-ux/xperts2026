@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="es" data-content_root="./">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Tarea 2 — Explotación &#8212; Laboratorio XPERTS26 · PHP2Shell</title>
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <link href="old/_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link href="old/_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link href="old/_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link href="old/_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="stylesheet" type="text/css" href="old/_static/pygments.css" />
+  <link rel="stylesheet" type="text/css" href="old/_static/styles/sphinx-book-theme.css" />
+  <link rel="stylesheet" type="text/css" href="old/_static/copybutton.css" />
+  <link rel="stylesheet" type="text/css" href="old/_static/togglebutton.css" />
+  <link rel="stylesheet" type="text/css" href="old/_static/sphinx-design.min.css" />
+  <link rel="stylesheet" type="text/css" href="old/_static/css/lightbox.min.css" />
+  <script src="old/_static/vendor/fontawesome/6.5.2/js/all.min.js"></script>
+  <style>
+    .xp-img { max-width: 100%; height: auto; margin: 0.75rem 0; border: 1px solid rgba(128,128,128,0.25); border-radius: 4px; display: block; }
+    .xp-fig { margin: 1rem 0; }
+  </style>
+</head>
+<body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Saltar al contenido principal</a></div>
+  <div id="pst-scroll-pixel-helper"></div>
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top"><i class="fa-solid fa-arrow-up"></i>Volver arriba</button>
+  <input type="checkbox" class="sidebar-toggle" id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  <input type="checkbox" class="sidebar-toggle" id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none"></header>
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      <div class="bd-sidebar-primary bd-sidebar">
+        <div class="sidebar-header-items sidebar-primary__section"></div>
+        <div class="sidebar-primary-items__start sidebar-primary__section">
+          <div class="sidebar-primary-item">
+            <a class="navbar-brand logo" href="index.html">
+              <img src="old/_static/light-fortinet-logo.png" class="logo__image only-light" alt=""/>
+              <script>document.write(`<img src="old/_static/dark-fortinet-logo.png" class="logo__image only-dark" alt=""/>`);</script>
+              <p class="title logo__title">Laboratorio XPERTS26 · PHP2Shell</p>
+            </a>
+          </div>
+          <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Contenidos:</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 "><a class="reference internal" href="000_intro.html">Introducción</a></li>
+</ul>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 "><a class="reference internal" href="001_task1.html">1. Tarea 1 — Reconocimiento</a></li>
+<li class="toctree-l1 current active"><a class="reference internal" href="002_task2.html">2. Tarea 2 — Explotación</a></li>
+<li class="toctree-l1 "><a class="reference internal" href="003_task3.html">3. Tarea 3 — Instalación</a></li>
+<li class="toctree-l1 "><a class="reference internal" href="004_task4.html">4. Tarea 4 — Mando y control</a></li>
+<li class="toctree-l1 "><a class="reference internal" href="005_task5.html">5. Tarea 5 — Exfiltración</a></li>
+<li class="toctree-l1 "><a class="reference internal" href="006_task6.html">6. Tarea 6 — Auditoría de la IA</a></li>
+<li class="toctree-l1 "><a class="reference internal" href="007_task7.html">7. Tarea 7 — Movimiento lateral</a></li>
+<li class="toctree-l1 "><a class="reference internal" href="008_task8.html">8. Tarea 8 — Informe y expediente</a></li>
+</ul>
+    </div>
+</nav></div>
+        </div>
+      </div>
+      <main id="main-content" class="bd-main" role="main">
+        <div class="sbt-scroll-pixel-helper"></div>
+        <div class="bd-content">
+          <div class="bd-article-container">
+            <div class="bd-header-article d-print-none">
+              <div class="header-article-items header-article__inner">
+                <div class="header-article-items__start">
+                  <div class="header-article-item">
+                    <button class="sidebar-toggle primary-toggle btn btn-sm" title="Alternar barra lateral principal">
+                      <span class="fa-solid fa-bars"></span>
+                    </button>
+                  </div>
+                </div>
+                <div class="header-article-items__end">
+                  <div class="header-article-item">
+                    <script>
+                      document.write(`<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="claro/oscuro" aria-label="claro/oscuro"><i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i><i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i><i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i></button>`);
+                    </script>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <article class="bd-article">
+              <section id="task-2">
+<h1><span class="section-number">2. </span>Tarea 2 — Explotación: cómo entra y qué motor lo ve<a class="headerlink" href="#task-2" title="Enlace a este encabezado">#</a></h1>
+
+<section id="goal-task2">
+<h2><span class="section-number">2.1. </span>Objetivo<a class="headerlink" href="#goal-task2" title="Enlace a este encabezado">#</a></h2>
+<div class="sd-card sd-sphinx-override sd-mb-3 sd-shadow-sm docutils">
+  <div class="sd-card-body docutils">
+    <div class="sd-card-title sd-font-weight-bold docutils">Objetivo: Encontrar el evento del motor de IPS que detecta el ataque, entender por qué no lo bloquea y enlazarlo con la petición web que lo provoca. El atacante ya conocido (103.216.220.92) lanza un POST gigante a /index.php del portal de pagos.</div>
+    <p class="sd-card-text"><span class="sd-sphinx-override sd-badge sd-bg-success sd-bg-text-success">Duración: 15–20 min</span></p>
+    <p class="sd-card-text"><strong>Tareas:</strong></p>
+    <ul class="simple"><li><p class="sd-card-text">Encontrar el evento del motor de IPS que detecta el ataque</p></li>
+<li><p class="sd-card-text">Entender por qué no lo bloquea</p></li>
+<li><p class="sd-card-text">Enlazar el IPS con la petición web que lo provoca</p></li>
+<li><p class="sd-card-text">Mapear las alertas a la matriz MITRE ATT&CK</p></li></ul>
+  </div>
+</div>
+</section>
+<section id="steps-task2">
+<h2><span class="section-number">2.2. </span>Pasos<a class="headerlink" href="#steps-task2" title="Enlace a este encabezado">#</a></h2>
+<p>Abre la alerta «Oversized multipart POST to index.php» y su Source Data:</p>
+<figure class="xp-fig"><a href="_images/image19.png" data-lightbox="image-set"><img class="xp-img" src="_images/image19.png" alt="image19.png" loading="lazy"/></a></figure>
+<p>En el fortigate:</p>
+<p>action=&quot;accept&quot; + service=&quot;HTTPS&quot; + trandisp=&quot;dnat&quot; → la política lo dejó pasar, entró por la VIP y acómodo al servidor real. appcat=&quot;unscanned&quot; → nadie miró dentro. Tamaño: sentbyte=61440 ≈ 60 KB.</p>
+<p>A nivel de apache:</p>
+<p>&quot;POST /index.php&quot; 200 8412 con python-requests/2.31.0 → PHP aceptó y respondió; el User-Agent delata automatización. Misma sesión (sessionid=419044): dos capas, un solo hecho.</p>
+<figure class="xp-fig"><a href="_images/image20.png" data-lightbox="image-set"><img class="xp-img" src="_images/image20.png" alt="image20.png" loading="lazy"/></a></figure>
+<p>Abre la alerta PHP-FPM memory exhaustion:</p>
+<figure class="xp-fig"><a href="_images/image21.png" data-lightbox="image-set"><img class="xp-img" src="_images/image21.png" alt="image21.png" loading="lazy"/></a></figure>
+<p>FortiGate IPS: detecta un intento de explotación de PHP2Shell mediante la firma FortiGuard 62657. Como está configurado en modo detección (action=&quot;detected&quot;), no bloquea el tráfico.</p>
+<p>Apache: registra una petición POST /index.php procedente de la misma IP atacante. El servidor devuelve un HTTP 500, indicando un error interno durante el procesamiento.</p>
+<p>PHP: registra un error fatal por agotamiento del límite de memoria de 256 MiB, compatible con el mecanismo de explotación investigado.</p>
+<p>FortiGate IPS: detecta otro patrón asociado a la segunda vulnerabilidad (firma 62658), también con action=&quot;detected</p>
+<figure class="xp-fig"><a href="_images/image22.png" data-lightbox="image-set"><img class="xp-img" src="_images/image22.png" alt="image22.png" loading="lazy"/></a></figure>
+<p>Quédate con el ID sesión de la segunda alerta, relativo al motor de IPS. 419044</p>
+<p>Abre el caso que han generado esas dos alertas, desde Cases: PHP Remote Code Execution Attempt on web01.pagos.xperts26.com</p>
+<figure class="xp-fig"><a href="_images/image23.png" data-lightbox="image-set"><img class="xp-img" src="_images/image23.png" alt="image23.png" loading="lazy"/></a></figure>
+<p>En el caso vete a la sección timeline:</p>
+<figure class="xp-fig"><a href="_images/image24.png" data-lightbox="image-set"><img class="xp-img" src="_images/image24.png" alt="image24.png" loading="lazy"/></a></figure>
+<p>Y revisa las alertas que lo componen::</p>
+<figure class="xp-fig"><a href="_images/image25.png" data-lightbox="image-set"><img class="xp-img" src="_images/image25.png" alt="image25.png" loading="lazy"/></a></figure>
+<p>Comprueba el mapeo de ambas alertas sobre la matrix MITRE:</p>
+<figure class="xp-fig"><a href="_images/image26.png" data-lightbox="image-set"><img class="xp-img" src="_images/image26.png" alt="image26.png" loading="lazy"/></a></figure>
+<p>Si haces drill down sobre la primera alerta: “Oversized multipart POST”:</p>
+<figure class="xp-fig"><a href="_images/image27.png" data-lightbox="image-set"><img class="xp-img" src="_images/image27.png" alt="image27.png" loading="lazy"/></a></figure>
+<p>Y en la alerta bajas al source-data, se ve el accept de la sesión del tráfico aceptado por el firewall en el que el ID coincide con el ID de los posteriores eventos de IPS:</p>
+<figure class="xp-fig"><a href="_images/image28.png" data-lightbox="image-set"><img class="xp-img" src="_images/image28.png" alt="image28.png" loading="lazy"/></a></figure>
+<p>Revisa que todo esto, se ofrece en el insights de AI del caso:</p>
+<figure class="xp-fig"><a href="_images/image29.png" data-lightbox="image-set"><img class="xp-img" src="_images/image29.png" alt="image29.png" loading="lazy"/></a></figure>
+<p>Si tienes dudas abre FortiAI y lanza la pregunta:</p>
+<figure class="xp-fig"><a href="_images/image30.png" data-lightbox="image-set"><img class="xp-img" src="_images/image30.png" alt="image30.png" loading="lazy"/></a></figure>
+<figure class="xp-fig"><a href="_images/image31.png" data-lightbox="image-set"><img class="xp-img" src="_images/image31.png" alt="image31.png" loading="lazy"/></a></figure>
+</section>
+<div class="admonition important">
+  <p class="admonition-title">Preguntas de control</p>
+  <p>Las <strong>preguntas de control</strong> de esta tarea están publicadas en la <strong>web oficial de la competición XPERTS26</strong>. Entra con tu equipo para responderlas y validar el progreso del laboratorio.</p>
+  <p>👉 Accede a la <strong>plataforma de la competición</strong> para enviar tus respuestas.</p>
+</div>
+
+</section>
+            </article>
+            <footer class="prev-next-footer d-print-none"><div class="prev-next-area"><a class="left-prev" href="001_task1.html" title="página anterior"><i class="fa-solid fa-angle-left"></i><div class="prev-next-info"><p class="prev-next-subtitle">anterior</p><p class="prev-next-title">1. Tarea 1 — Reconocimiento</p></div></a><a class="right-next" href="003_task3.html" title="página siguiente"><div class="prev-next-info"><p class="prev-next-subtitle">siguiente</p><p class="prev-next-title">3. Tarea 3 — Instalación</p></div><i class="fa-solid fa-angle-right"></i></a></div></footer>
+          </div>
+        </div>
+        <footer class="bd-footer-content">
+          <div class="bd-footer-content__inner container">
+            <div class="footer-item"><p class="component-author">Guía del analista XPERTS26 · PHP2Shell</p></div>
+            <div class="footer-item"><p class="copyright">© Copyright 2026, Fortinet.</p></div>
+            <div class="footer-item"><p class="last-updated">Última actualización: 10 de noviembre de 2026.</p></div>
+          </div>
+        </footer>
+      </main>
+    </div>
+  </div>
+  <script src="old/_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+  <script src="old/_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+</body>
+</html>
