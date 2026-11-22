@@ -109,8 +109,8 @@
 <h2><span class="section-number">2.2. </span>Pasos<a class="headerlink" href="#steps-task2" title="Enlace a este encabezado">#</a></h2>
 <p>Abre la alerta «Oversized multipart POST to index.php» y su Source Data:</p>
 <figure class="xp-fig"><a href="_images/image19.png" data-lightbox="image-set"><img class="xp-img" src="_images/image19.png" alt="image19.png" loading="lazy"/></a></figure>
-<p>En el fortigate:</p>
-<p>action=&quot;accept&quot; + service=&quot;HTTPS&quot; + trandisp=&quot;dnat&quot; → la política lo dejó pasar, entró por la VIP y acomodo al servidor real. appcat=&quot;unscanned&quot; → nadie miró dentro. Tamaño: sentbyte=61440 ≈ 60 KB.</p>
+<p>En el FortiGate:</p>
+<p>action=&quot;accept&quot; + service=&quot;HTTPS&quot; + trandisp=&quot;dnat&quot; → la política lo dejó pasar: el firewall tradujo el destino (DNAT) desde la VIP 203.0.113.45 hacia el servidor real 10.10.20.15. appcat=&quot;unscanned&quot; → nadie miró dentro. Tamaño: sentbyte=61440 ≈ 60 KB.</p>
 <p>A nivel de apache:</p>
 <p>&quot;POST /index.php&quot; 200 8412 con python-requests/2.31.0 → PHP aceptó y respondió; el User-Agent delata automatización. Misma sesión (sessionid=419044): dos capas, un solo hecho.</p>
 <figure class="xp-fig"><a href="_images/image20.png" data-lightbox="image-set"><img class="xp-img" src="_images/image20.png" alt="image20.png" loading="lazy"/></a></figure>
@@ -119,14 +119,14 @@
 <p>FortiGate IPS: detecta un intento de explotación de PHP2Shell mediante la firma FortiGuard 62657. Como está configurado en modo detección (action=&quot;detected&quot;), no bloquea el tráfico.</p>
 <p>Apache: registra una petición POST /index.php procedente de la misma IP atacante. El servidor devuelve un HTTP 500, indicando un error interno durante el procesamiento.</p>
 <p>PHP: registra un error fatal por agotamiento del límite de memoria de 256 MiB, compatible con el mecanismo de explotación investigado.</p>
-<p>FortiGate IPS: detecta otro patrón asociado a la segunda vulnerabilidad (firma 62658), también con action=&quot;detected</p>
+<p>FortiGate IPS: detecta otro patrón asociado a la segunda vulnerabilidad (firma 62658), también con action=&quot;detected&quot;.</p>
 <figure class="xp-fig"><a href="_images/image22.png" data-lightbox="image-set"><img class="xp-img" src="_images/image22.png" alt="image22.png" loading="lazy"/></a></figure>
 <p>Quédate con el ID sesión de la segunda alerta, relativo al motor de IPS. 419044</p>
 <p>Abre el caso que han generado esas dos alertas, desde Cases: PHP Remote Code Execution Attempt on web01.pagos.xperts26.com</p>
 <figure class="xp-fig"><a href="_images/image23.png" data-lightbox="image-set"><img class="xp-img" src="_images/image23.png" alt="image23.png" loading="lazy"/></a></figure>
 <p>En el caso vete a la sección timeline:</p>
 <figure class="xp-fig"><a href="_images/image24.png" data-lightbox="image-set"><img class="xp-img" src="_images/image24.png" alt="image24.png" loading="lazy"/></a></figure>
-<p>Y revisa las alertas que lo componen::</p>
+<p>Y revisa las alertas que lo componen:</p>
 <figure class="xp-fig"><a href="_images/image25.png" data-lightbox="image-set"><img class="xp-img" src="_images/image25.png" alt="image25.png" loading="lazy"/></a></figure>
 <p>En el mismo caso, más abajo comprueba el mapeo de ambas alertas sobre la matrix MITRE:</p>
 <figure class="xp-fig"><a href="_images/image26.png" data-lightbox="image-set"><img class="xp-img" src="_images/image26.png" alt="image26.png" loading="lazy"/></a></figure>
