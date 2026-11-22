@@ -110,7 +110,7 @@
 <p>Abre la alerta «Oversized multipart POST to index.php» y su Source Data:</p>
 <figure class="xp-fig"><a href="_images/image19.png" data-lightbox="image-set"><img class="xp-img" src="_images/image19.png" alt="image19.png" loading="lazy"/></a></figure>
 <p>En el fortigate:</p>
-<p>action=&quot;accept&quot; + service=&quot;HTTPS&quot; + trandisp=&quot;dnat&quot; → la política lo dejó pasar, entró por la VIP y acómodo al servidor real. appcat=&quot;unscanned&quot; → nadie miró dentro. Tamaño: sentbyte=61440 ≈ 60 KB.</p>
+<p>action=&quot;accept&quot; + service=&quot;HTTPS&quot; + trandisp=&quot;dnat&quot; → la política lo dejó pasar, entró por la VIP y acomodo al servidor real. appcat=&quot;unscanned&quot; → nadie miró dentro. Tamaño: sentbyte=61440 ≈ 60 KB.</p>
 <p>A nivel de apache:</p>
 <p>&quot;POST /index.php&quot; 200 8412 con python-requests/2.31.0 → PHP aceptó y respondió; el User-Agent delata automatización. Misma sesión (sessionid=419044): dos capas, un solo hecho.</p>
 <figure class="xp-fig"><a href="_images/image20.png" data-lightbox="image-set"><img class="xp-img" src="_images/image20.png" alt="image20.png" loading="lazy"/></a></figure>
@@ -128,7 +128,7 @@
 <figure class="xp-fig"><a href="_images/image24.png" data-lightbox="image-set"><img class="xp-img" src="_images/image24.png" alt="image24.png" loading="lazy"/></a></figure>
 <p>Y revisa las alertas que lo componen::</p>
 <figure class="xp-fig"><a href="_images/image25.png" data-lightbox="image-set"><img class="xp-img" src="_images/image25.png" alt="image25.png" loading="lazy"/></a></figure>
-<p>Comprueba el mapeo de ambas alertas sobre la matrix MITRE:</p>
+<p>En el mismo caso, más abajo comprueba el mapeo de ambas alertas sobre la matrix MITRE:</p>
 <figure class="xp-fig"><a href="_images/image26.png" data-lightbox="image-set"><img class="xp-img" src="_images/image26.png" alt="image26.png" loading="lazy"/></a></figure>
 <p>Si haces drill down sobre la primera alerta: “Oversized multipart POST”:</p>
 <figure class="xp-fig"><a href="_images/image27.png" data-lightbox="image-set"><img class="xp-img" src="_images/image27.png" alt="image27.png" loading="lazy"/></a></figure>

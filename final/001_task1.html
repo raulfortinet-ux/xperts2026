@@ -107,14 +107,14 @@
 </section>
 <section id="steps-task1">
 <h2><span class="section-number">1.2. </span>Pasos<a class="headerlink" href="#steps-task1" title="Enlace a este encabezado">#</a></h2>
-<p>Entra en Cases and Alerts – Alerts- Alert List y filtra por tipo Reconnaissance: localiza las dos alertas del escaneo.</p>
+<p>Entra en Cases and Alerts – Alerts- Alert List y filtra por Target Asset “web01” y localiza las dos alertas del escaneo.</p>
 <figure class="xp-fig"><a href="_images/image2.png" data-lightbox="image-set"><img class="xp-img" src="_images/image2.png" alt="image2.png" loading="lazy"/></a></figure>
 <figure class="xp-fig"><a href="_images/image3.png" data-lightbox="image-set"><img class="xp-img" src="_images/image3.png" alt="image3.png" loading="lazy"/></a></figure>
-<p>Comprueba si existe un caso para ellas.</p>
+<p>Comprueba si existe un caso para ellas. Entra en Cases and Alerts – Case List y filtra por Name “Port Scan”.</p>
 <figure class="xp-fig"><a href="_images/image3.png" data-lightbox="image-set"><img class="xp-img" src="_images/image3.png" alt="image3.png" loading="lazy"/></a></figure>
 <p>Case List</p>
 <figure class="xp-fig"><a href="_images/image4.png" data-lightbox="image-set"><img class="xp-img" src="_images/image4.png" alt="image4.png" loading="lazy"/></a></figure>
-<p>Abre una alerta de recon y localiza el campo &quot;Source Data&quot;: ahí están los registros crudos.</p>
+<p>Abre una alerta de escaneo y localiza el campo &quot;Source Data&quot; (abajo): ahí están los registros crudos.</p>
 <figure class="xp-fig"><a href="_images/image5.png" data-lightbox="image-set"><img class="xp-img" src="_images/image5.png" alt="image5.png" loading="lazy"/></a></figure>
 <p>Identifica la dirección de origen, los puertos de destino y la acción del cortafuegos.</p>
 <p>Revisa la severidad de la alerta (Low) y busca la regla que escalaría la alerta a “CASO”:</p>
@@ -122,7 +122,7 @@
 <p>Si no la encuentras es que la alerta no cumple las condiciones y si la encuentras puede que se deba a un escalado manual. Revisa la regla de escalado en:</p>
 <figure class="xp-fig"><a href="_images/image7.png" data-lightbox="image-set"><img class="xp-img" src="_images/image7.png" alt="image7.png" loading="lazy"/></a></figure>
 <figure class="xp-fig"><a href="_images/image8.png" data-lightbox="image-set"><img class="xp-img" src="_images/image8.png" alt="image8.png" loading="lazy"/></a></figure>
-<p>Escala las alertas de port scan a Caso de manera manual para analizarlo: (esto solo lo puede hacer el primero que llegue a este paso)</p>
+<p>Escala las alertas de port scan a Caso de manera manual para analizarlo si no estuviera ya creado automáticamente.</p>
 <figure class="xp-fig"><a href="_images/image9.png" data-lightbox="image-set"><img class="xp-img" src="_images/image9.png" alt="image9.png" loading="lazy"/></a></figure>
 <figure class="xp-fig"><a href="_images/image10.png" data-lightbox="image-set"><img class="xp-img" src="_images/image10.png" alt="image10.png" loading="lazy"/></a></figure>
 <p>Al darle a escalate se creará el caso:</p>
@@ -130,13 +130,13 @@
 <p>Desde la vista de Casos:</p>
 <figure class="xp-fig"><a href="_images/image12.png" data-lightbox="image-set"><img class="xp-img" src="_images/image12.png" alt="image12.png" loading="lazy"/></a></figure>
 <figure class="xp-fig"><a href="_images/image13.png" data-lightbox="image-set"><img class="xp-img" src="_images/image13.png" alt="image13.png" loading="lazy"/></a></figure>
-<p>Enriquece el caso y analízalo con FortiAI,verás que se completa muchísima información interpretable, no en crudo y que se cambia hasta el nombre del caso. Obtendras información valiosa sin tener que buscar manualmente en eventos, logs, etc… todo el contexto en una misma vista:</p>
+<p>Enriquece el caso y analízalo con FortiAI, verás que se completa muchísima información interpretable, no en crudo y que se cambia hasta el nombre del caso. Obtendrás información valiosa sin tener que buscar manualmente en eventos, logs, etc… todo el contexto en una misma vista:</p>
 <figure class="xp-fig"><a href="_images/image14.png" data-lightbox="image-set"><img class="xp-img" src="_images/image14.png" alt="image14.png" loading="lazy"/></a></figure>
 <figure class="xp-fig"><a href="_images/image15.png" data-lightbox="image-set"><img class="xp-img" src="_images/image15.png" alt="image15.png" loading="lazy"/></a></figure>
 <figure class="xp-fig"><a href="_images/image16.png" data-lightbox="image-set"><img class="xp-img" src="_images/image16.png" alt="image16.png" loading="lazy"/></a></figure>
 <figure class="xp-fig"><a href="_images/image17.png" data-lightbox="image-set"><img class="xp-img" src="_images/image17.png" alt="image17.png" loading="lazy"/></a></figure>
 <figure class="xp-fig"><a href="_images/image18.png" data-lightbox="image-set"><img class="xp-img" src="_images/image18.png" alt="image18.png" loading="lazy"/></a></figure>
-<p>Una vez finalice tendremos todo el contexto de este escaño y posibles relaciones que el motor de FortiAI ha identificado, de hecho anticipándonos ya lo que puede haber ocurrido en acciones posteriores al port scan.</p>
+<p>Una vez finalice tendremos todo el contexto de este escaneo y posibles relaciones que el motor de FortiAI ha identificado, de hecho anticipándonos ya lo que puede haber ocurrido en acciones posteriores al port scan.</p>
 </section>
 <div class="admonition important">
   <p class="admonition-title">Preguntas de control</p>

@@ -111,15 +111,15 @@
 <figure class="xp-fig"><a href="_images/image32.png" data-lightbox="image-set"><img class="xp-img" src="_images/image32.png" alt="image32.png" loading="lazy"/></a></figure>
 <p>En las alertas, a nivel de timeline, haciendo drilldown a las alertas: localiza los eventos de auditoría de Linux: tipos &quot;SYSCALL&quot;, &quot;EXECVE&quot; y &quot;PATH&quot;.</p>
 <figure class="xp-fig"><a href="_images/image33.png" data-lightbox="image-set"><img class="xp-img" src="_images/image33.png" alt="image33.png" loading="lazy"/></a></figure>
-<p>Identifica qué proceso ejecuta la creación de la cuenta y con qué identificador de usuari</p>
+<p>Identifica qué proceso ejecuta la creación de la cuenta y con qué identificador de usuario.</p>
 <p>Recuerda que puedes verlo en el el resumen AI del caso, consultando al agente FortiAI o yendo al source data de la alerta.</p>
 <p>Localiza la ruta exacta del fichero escrito en el directorio web.</p>
 <p>Recuerda que puedes verlo en el el resumen AI del caso, consultando al agente FortiAI o yendo al source data de la alerta.</p>
-<p>Abre el dashboard XPERTS26 VULN DPRESTES y en la tabla de activos verifica la versión de PHP que lleva web01 y la línea de su descripción, firmada por el playbook (fíjate en quién la escribe).</p>
+<p>Abre el dashboard XPERTS26 VULN y en la tabla de activos verifica la versión de PHP que lleva web01 y la línea de su descripción, firmada por el playbook (fíjate en quién la escribe).</p>
 <figure class="xp-fig"><a href="_images/image34.png" data-lightbox="image-set"><img class="xp-img" src="_images/image34.png" alt="image34.png" loading="lazy"/></a></figure>
 <p>Investiga como se alimenta este dashboard. Pistas:</p>
 <p>En la descripción del activo web01 se marca la vulnerabilidad, parece que lo escribe un playbook</p>
-<p>Analiza el playbook per NO LO EDITES NI EJECUTES:</p>
+<p>Analiza el playbook pero NO LO EDITES NI EJECUTES:</p>
 <figure class="xp-fig"><a href="_images/image35.png" data-lightbox="image-set"><img class="xp-img" src="_images/image35.png" alt="image35.png" loading="lazy"/></a></figure>
 <p>Revisa los pasos que se dan para alimentar los paneles de gestión de vulnerabilidades. Dale a EDITAR PARA VER EL DETALLE PERO LUEGO CANCELA Y NO GUARDES CAMBIOS</p>
 <p>Este playbook utiliza el caso PHP2Shell para demostrar cómo podemos cruzar la información de un incidente con el inventario de activos y la inteligencia de vulnerabilidades, automatizando tareas que normalmente tendría que realizar un analista.</p>
